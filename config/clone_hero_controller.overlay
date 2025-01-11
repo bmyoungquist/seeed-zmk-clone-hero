@@ -1,8 +1,8 @@
 / {
 	chosen {
-		zmk,kscan = &kscan0
+		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
-	}
+	};
 
 	default_transform: matrix_transform {
 		compatible = "zmk,kscan-gpio-direct";
@@ -18,5 +18,5 @@
 			, <&xiao_d 7 (GPIO_ACTIVE_HIGH)>
 			, <&xiao_d 8 (GPIO_ACTIVE_HIGH)>
 			;
-	}
-}
+	};
+};
