@@ -1,0 +1,82 @@
+if SHIELD_CLONE_HERO_CONTROLLER
+
+
+# ========================================== #
+# General                                    #
+# https://zmk.dev/docs/config/system#general #
+# ========================================== #
+config ZMK_KEYBOARD_NAME
+	default "BLE Guitar"
+
+
+# ============================================ #
+# Bluetooth                                    #
+# https://zmk.dev/docs/config/system#bluetooth #
+# ============================================ #
+config BT
+	default y
+
+config ZMK_BLE
+	default y
+
+# Max number of bluetooth connections. Setting to 1 for best user experience.
+config BT_MAX_CONN
+	default 1
+
+# Max number of stored bluetooth connections. Setting to 4 because we have 5 fret
+# buttons but we need to reserve the 5th (orange) for the "clear connection" button.
+config BT_MAX_PAIRED
+	default 4
+
+# If you are running on macOS, and your computer is being woken from sleep
+# by your controller, you can uncomment the following config item to see
+# if it fixes your issue.
+#config CONFIG_BT_BAS
+#	default n
+
+# Disable the need to enter a passkey
+config ZMK_BLE_PASSKEY_ENTRY
+	default n
+
+
+# =========================================== #
+# Battery Settings                            #
+# https://zmk.dev/docs/config/battery#kconfig #
+# =========================================== #
+# Battery Reporting is defaulted to n. 
+# This line is commented out because CONFIG_ZMK_BLE implies battery reporting.
+# If you are having issues with battery reporting over bluetooth, you can
+# uncomment the following line to see if it fixes the issue.
+#config ZMK_BATTERY_REPORTING
+#	default y
+
+# Length in seconds. Three and a half minutes or 210 is the average length of a song.
+config ZMK_BATTERY_REPORT_INTERVAL
+	default 210
+
+
+# ============== #
+# Sleep Settings #
+# ============== #
+# Allow the controller to go to sleep to prevent battery drain.
+config ZMK_SLEEP
+	default y
+
+# This is the amount of time in milliseconds before the controller goes into an idle state.
+# We are setting this to 60 seconds or 1 minute
+config ZMK_IDLE_TIMEOUT
+	default 60000
+
+# This is the amount of time in milliseconds before the controller goes into a deep sleep.
+# We are setting this to 300 seconds or 5 minutes.
+config ZMK_IDLE_SLEEP_TIMEOUT
+	default 300000
+
+# Don't allow the controller to go into a soft off state.
+# If you would like to enable this, you need to set the GPIO wakeup trigger described 
+# at the link below
+# https://zmk.dev/docs/config/power#gpio-key-wakeup-trigger
+config ZMK_PM_SOFT_OFF
+	default n
+	
+endif
