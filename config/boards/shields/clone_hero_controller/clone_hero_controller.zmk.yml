@@ -1,6 +1,6 @@
 file_format: "1"
-id: totem
-name: TOTEM
+id: clone-hero-controller
+name: Clone Hero Controller
 type: shield
 url: https://github.com/bmyoungquist/seeed-zmk-clone-hero
 requires: [seeeduino_xiao_ble]
