@@ -20,4 +20,4 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: zmk_uno
+    shield: clone-hero-controller
