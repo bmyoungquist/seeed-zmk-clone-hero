@@ -1,10 +1,9 @@
 / {
 	chosen {
 		zmk,kscan = &kscan0;
-		zmk,matrix_transform = &default_transform;
 	};
 
-	default_transform: matrix_transform {
+	kscan0: kscan0 {
 		compatible = "zmk,kscan-gpio-direct";
 		wakeup-source;
 		input-gpios
