@@ -6,7 +6,7 @@
 	kscan0: kscan0 {
 		compatible = "zmk,kscan-gpio-direct";
 		wakeup-source;
-		debounce-press-ms = <50>;
+		debounce-press-ms = <80>;
 		debounce-release-ms = <3>;
 		input-gpios
 			= <&xiao_d 0 (GPIO_ACTIVE_LOW)>
